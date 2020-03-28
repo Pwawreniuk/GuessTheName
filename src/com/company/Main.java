@@ -19,11 +19,14 @@ public class Main {
 
         int randMovie = (int) (Math.random() * movieNum) + 1;
         Scanner fileScanner2 = new Scanner(file);
-        for(int i = 0; i < randMovie; i++) {
+        for (int i = 0; i < randMovie; i++) {
             choosenMovie = fileScanner2.nextLine();
         }
 
         Game GuessName = new Game(choosenMovie);
         GuessName.GameStart();
+        for (int i = 0; i < 10; i++) {
+            GuessName.AskForLetter();
+        }
     }
 }
