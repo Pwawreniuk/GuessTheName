@@ -25,8 +25,6 @@ public class Main {
 
         Game GuessName = new Game(choosenMovie);
         GuessName.GameStart();
-        for (int i = 0; i < 10; i++) {
-            GuessName.AskForLetter();
-        }
+
     }
 }
