@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        String choosenMovie = null;
+        String movieName = null;
 
         File file = new File("Movies.txt");
         Scanner fileScanner1 = new Scanner(file);
@@ -20,10 +20,10 @@ public class Main {
         int randMovie = (int) (Math.random() * movieNum) + 1;
         Scanner fileScanner2 = new Scanner(file);
         for (int i = 0; i < randMovie; i++) {
-            choosenMovie = fileScanner2.nextLine();
+            movieName = fileScanner2.nextLine();
         }
 
-        Game GuessName = new Game(choosenMovie);
+        Game GuessName = new Game(movieName);
         GuessName.GameStart();
 
     }

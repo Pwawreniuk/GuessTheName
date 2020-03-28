@@ -25,6 +25,10 @@ public class Game {
 
         while(points > 0 ) {
             AskForLetter();
+            if(underscoreName.equals(movieName)) {
+                System.out.println("YOU WON");
+                points = 0;
+            }
         }
     }
 
@@ -39,7 +43,7 @@ public class Game {
         int letterIndex = 0;
         String guess = scanner.next();
         Scanner WordScanner = new Scanner(movieName);
-        for(int i = 0; i < nameLength; i++) {
+        for(int i = 0; i < nameLength; i++, letterIndex++) {
             String Word = WordScanner.next();
             char nextLetter;
             for(int j = 0; j < Word.length(); j++, letterIndex++) {
@@ -57,14 +61,17 @@ public class Game {
                     wasWrong = true;
                 }
             }
+
             if(!wasWrong) {
                 wrongLetters[wrongLettersCount] = guess.charAt(0);
                 wrongLettersCount++;
                 points--;
+                System.out.println("You guessed wrong.");
             }
-            else System.out.println("You already guessed that letter.");
+            else {System.out.println("You already guessed that letter."); }
         }
         System.out.println("You are guessing:" + underscoreName);
+        System.out.println("You have guessed (" + (10 - points) + ") wrong letters");
     }
 
 }
