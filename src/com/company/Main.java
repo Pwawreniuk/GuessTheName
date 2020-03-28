@@ -11,7 +11,7 @@ public class Main {
 
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
-
+            System.out.println(line);
         }
     }
 }
