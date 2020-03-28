@@ -22,6 +22,8 @@ public class Main {
         for(int i = 0; i < randMovie; i++) {
             choosenMovie = fileScanner2.nextLine();
         }
-        System.out.println(choosenMovie);
+
+        Game GuessName = new Game(choosenMovie);
+        GuessName.GameStart();
     }
 }
